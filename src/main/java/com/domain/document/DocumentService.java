@@ -1,6 +1,6 @@
-package com.domain.Document;
+package com.domain.document;
 
-import com.infrastructure.Vehicle.VehicleDO;
+import com.domain.vehicle.Vehicle;
 import com.util.CSVUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -18,9 +18,9 @@ public class DocumentService {
 
     private static String CSV_FILE_NAME = "dailyVehicleReport.cvs";
 
-    public Optional<File> generateDailyVehiclesReport(List<VehicleDO> vehicleList) {
+    public Optional<File> generateDailyVehiclesReport(List<Vehicle> vehicleList) {
 
-        List<String[]> data = vehicleList.stream().map(VehicleDO::retrieveValues).collect(Collectors.toList());
+        List<String[]> data = vehicleList.stream().map(Vehicle::retrieveValues).collect(Collectors.toList());
 
         File csvOutputFile = new File(CSV_FILE_NAME);
 

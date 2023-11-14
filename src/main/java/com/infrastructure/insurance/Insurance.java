@@ -1,4 +1,4 @@
-package com.infrastructure.Insurance;
+package com.infrastructure.insurance;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,8 +28,7 @@ public class Insurance implements Serializable {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    public Insurance() {
-    }
+    public Insurance() { }
 
     public String getPolicyNumber() {
         return policyNumber;

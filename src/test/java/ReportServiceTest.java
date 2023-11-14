@@ -1,9 +1,9 @@
-import com.infrastructure.Insurance.InsuranceDO;
-import com.infrastructure.Vehicle.VehicleDO;
-import com.domain.Document.DocumentService;
-import com.domain.Report.ReportService;
-import com.domain.Request.RequestService;
-import com.domain.Vehicle.VehicleService;
+import com.domain.vehicle.VehicleInsurance;
+import com.domain.vehicle.Vehicle;
+import com.domain.document.DocumentService;
+import com.domain.report.ReportService;
+import com.domain.request.RequestService;
+import com.domain.vehicle.VehicleService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +49,7 @@ public class ReportServiceTest {
         MockitoAnnotations.initMocks(this);
 
         Optional<File> file = Optional.of(new File("new/file"));
-        List<VehicleDO> vehicleList = vehicleGenerator(5);
+        List<Vehicle> vehicleList = vehicleGenerator(5);
 
         when(vehicleService.getAllRegisteredVehicles()).thenReturn(vehicleList);
         when(documentService.generateDailyVehiclesReport(anyList())).thenReturn(file);
@@ -86,11 +86,11 @@ public class ReportServiceTest {
         Mockito.verify(requestService, never()).postFile(anyString(), any(File.class));
     }
 
-    private List<VehicleDO> vehicleGenerator(int amount){
+    private List<Vehicle> vehicleGenerator(int amount){
         return IntStream.range(0, amount)
-                        .mapToObj(i -> VehicleDO.create(UUID.randomUUID().toString(), "Some Make", "Any Model", i, Optional.empty(),
-                                                        InsuranceDO.create(UUID.randomUUID().toString(),
-                                                                           Instant.now(), Instant.now().plus(15, ChronoUnit.DAYS))))
+                        .mapToObj(i -> Vehicle.create(UUID.randomUUID().toString(), "Some Make", "Any Model", i, Optional.empty(),
+                                                      VehicleInsurance.create(UUID.randomUUID().toString(),
+                                                                              Instant.now(), Instant.now().plus(15, ChronoUnit.DAYS))))
                         .collect(Collectors.toList());
     }
 

@@ -1,9 +1,9 @@
-package com.domain.Report;
+package com.domain.report;
 
-import com.infrastructure.Vehicle.VehicleDO;
-import com.domain.Document.DocumentService;
-import com.domain.Request.RequestService;
-import com.domain.Vehicle.VehicleService;
+import com.domain.vehicle.Vehicle;
+import com.domain.document.DocumentService;
+import com.domain.request.RequestService;
+import com.domain.vehicle.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class ReportService {
     RequestService requestService;
 
     public void generateDailyVehiclesReport() {
-        List<VehicleDO> vehicles = vehicleService.getAllRegisteredVehicles();
+        List<Vehicle> vehicles = vehicleService.getAllRegisteredVehicles();
 
         if(vehicles.isEmpty()) return;
 
