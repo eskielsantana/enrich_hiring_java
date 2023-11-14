@@ -1,0 +1,34 @@
+CREATE TABLE vehicle_insurance (
+    policy_number VARCHAR(40) NOT NULL,
+    vehicle_registration  VARCHAR(40) NOT NULL,
+    start_date BIGINT(20),
+    end_date BIGINT(20),
+    PRIMARY KEY (policy_number)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+CREATE TABLE vehicle (
+    vehicle_registration VARCHAR(40) NOT NULL,
+    make VARCHAR(60) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT(5) NOT NULL,
+    description VARCHAR(300),
+    PRIMARY KEY (vehicle_registration)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+INSERT INTO vehicle (vehicle_registration, make, model, year, description) VALUES
+                (UUID(), 'Honda', 'Accord Coupe', '2008', 'Low Agressive'),
+                (UUID(), 'Ferrari', 'California Convertible', '2014', 'Dream...'),
+                (UUID(), 'Jeep', 'Cherokee Latitude Plus SUV', '2019', 'Great for adventures'),
+                (UUID(), 'Tesla', 'Model S 85 Electric Sedan', '2014', 'Where can I charge it?'),
+                (UUID(), 'Porshe', 'Panamera 4 E-Hybrid Hatchback', '2018', 'Just the best car ever'),
+                (UUID(), 'Hyuudai', 'Elantra ECO Sedan', '2018', 'I am a good car to rent'),
+                (UUID(), 'Audi', 'Acura ILX Premium Sedan', '2019', null);
+
+INSERT INTO vehicle_insurance (policy_number, vehicle_registration, start_date, end_date) VALUES
+                (UUID(), '10fe6431-062d-11ec-bad4-060ada5de82c', 1630134417687, 1631053737687),
+                (UUID(), '10ff6650-062d-11ec-bad4-060ada5de82c', 1630917643778, 1632248387778),
+                (UUID(), '10ff67f9-062d-11ec-bad4-060ada5de82c', 1630184748778, 1631542916778),
+                (UUID(), '10ff6860-062d-11ec-bad4-060ada5de82c', 1630497136779, 1631692424779),
+                (UUID(), '10ff68aa-062d-11ec-bad4-060ada5de82c', 1630113499779, 1631854133779),
+                (UUID(), '10ff68f4-062d-11ec-bad4-060ada5de82c', 1630707366779, 1631837426779),
+                (UUID(), '10ff693b-062d-11ec-bad4-060ada5de82c', 1630498703779, 1632172271779);
