@@ -4,12 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
-@Table(name="vehicle_insurance")
+@Table(name = "vehicle_insurance")
 public class Insurance implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -28,7 +30,7 @@ public class Insurance implements Serializable {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    public Insurance() { }
+    public Insurance() {}
 
     public String getPolicyNumber() {
         return policyNumber;

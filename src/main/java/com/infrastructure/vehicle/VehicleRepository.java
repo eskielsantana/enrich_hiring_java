@@ -1,7 +1,6 @@
-package com.infrastructure;
+package com.infrastructure.vehicle;
 
 import com.domain.vehicle.VehicleManager;
-import com.infrastructure.vehicle.Vehicle;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,13 +10,13 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class VehicleManagerImpl implements VehicleManager {
+public class VehicleRepository implements VehicleManager {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
-    public List<Vehicle> retrieveAllVehicles(){
+    public List<Vehicle> retrieveAllVehicles() {
         return entityManager.createNamedQuery("Vehicle.retrieveAllVehicles", Vehicle.class)
                             .getResultList();
     }

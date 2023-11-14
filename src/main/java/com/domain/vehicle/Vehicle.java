@@ -9,13 +9,6 @@ import java.util.Optional;
 
 @AutoValue
 public abstract class Vehicle {
-    public abstract String vehicleRegistration();
-    public abstract String make();
-    public abstract String model();
-    public abstract Integer year();
-    public abstract Optional<String> description();
-    public abstract VehicleInsurance insurance();
-
     public static Builder builder() {
         return new AutoValue_Vehicle.Builder();
     }
@@ -23,17 +16,6 @@ public abstract class Vehicle {
     public static Vehicle fromEntity(com.infrastructure.vehicle.Vehicle vehicle) {
         return Vehicle.create(vehicle.getVehicleRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(),
                               vehicle.getDescription(), VehicleInsurance.fromEntity(vehicle.getInsurance()));
-    }
-
-    public String[] retrieveValues(){
-        List<String> vehicleValues = Arrays.asList(vehicleRegistration(), make(), model(), String.valueOf(year()),
-                                                   description().orElse("EMPTY"));
-
-        List<String> result = new ArrayList<>(vehicleValues);
-
-        result.addAll(insurance().retrieveValues());
-
-        return result.toArray(new String[0]);
     }
 
     public static Vehicle create(String vehicleRegistration,
@@ -52,6 +34,28 @@ public abstract class Vehicle {
                 .build();
     }
 
+    public abstract String vehicleRegistration();
+
+    public abstract String make();
+
+    public abstract String model();
+
+    public abstract Integer year();
+
+    public abstract Optional<String> description();
+
+    public abstract VehicleInsurance insurance();
+
+    public String[] retrieveValues() {
+        List<String> vehicleValues = Arrays.asList(vehicleRegistration(), make(), model(), String.valueOf(year()),
+                                                   description().orElse("EMPTY"));
+
+        List<String> result = new ArrayList<>(vehicleValues);
+
+        result.addAll(insurance().retrieveValues());
+
+        return result.toArray(new String[0]);
+    }
 
     @AutoValue.Builder
     public abstract static class Builder {

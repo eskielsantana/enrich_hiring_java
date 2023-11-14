@@ -10,5 +10,4 @@ public class DateUtil {
     public static String convertInstantToFormattedDate(Instant instant) {
         return DATE_FORMAT.format(Date.from(instant).getTime());
     }
-
 }

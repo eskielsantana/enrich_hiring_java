@@ -51,7 +51,7 @@ public class ReportServiceTest {
         Optional<File> file = Optional.of(new File("new/file"));
         List<Vehicle> vehicleList = vehicleGenerator(5);
 
-        when(vehicleService.getAllRegisteredVehicles()).thenReturn(vehicleList);
+        when(vehicleService.getRegisteredVehicles()).thenReturn(vehicleList);
         when(documentService.generateDailyVehiclesReport(anyList())).thenReturn(file);
     }
 
@@ -60,7 +60,7 @@ public class ReportServiceTest {
 
         reportService.generateDailyVehiclesReport();
 
-        Mockito.verify(vehicleService).getAllRegisteredVehicles();
+        Mockito.verify(vehicleService).getRegisteredVehicles();
         Mockito.verify(documentService).generateDailyVehiclesReport(anyList());
         Mockito.verify(requestService).postFile(anyString(), any(File.class));
     }
@@ -68,7 +68,7 @@ public class ReportServiceTest {
     @Test
     public void whenGenerateDailyVehiclesReportIsCalled_NoVehicleReportsReturned_NoDocumentIsGenerated() {
 
-        when(vehicleService.getAllRegisteredVehicles()).thenReturn(Collections.emptyList());
+        when(vehicleService.getRegisteredVehicles()).thenReturn(Collections.emptyList());
 
         reportService.generateDailyVehiclesReport();
 

@@ -1,4 +1,4 @@
-package com;
+package com.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.Collections;
 
-@SpringBootApplication(scanBasePackages = { "com.manager", "com.services" })
+@SpringBootApplication(scanBasePackages = {"com.manager", "com.services"})
 @EnableScheduling
 public class MainClass {
     public static void main(String[] args) {
