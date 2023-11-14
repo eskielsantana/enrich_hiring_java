@@ -5,10 +5,10 @@ import java.time.Instant;
 import java.util.Date;
 
 public class DateUtil {
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yy - HH:mm:ss");
 
     public static String convertInstantToFormattedDate(Instant instant) {
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy - HH:mm:ss");
-        return df.format(Date.from(instant).getTime());
+        return DATE_FORMAT.format(Date.from(instant).getTime());
     }
 
 }

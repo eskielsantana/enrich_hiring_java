@@ -1,7 +1,35 @@
 package com.domain.Report;
 
-public interface ReportService {
+import com.infrastructure.Vehicle.VehicleDO;
+import com.domain.Document.DocumentService;
+import com.domain.Request.RequestService;
+import com.domain.Vehicle.VehicleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-    void generateDailyVehiclesReport();
+import java.io.File;
+import java.util.List;
+import java.util.Optional;
 
+@Service
+public class ReportService {
+
+    @Autowired
+    VehicleService vehicleService;
+
+    @Autowired
+    DocumentService documentService;
+
+    @Autowired
+    RequestService requestService;
+
+    public void generateDailyVehiclesReport() {
+        List<VehicleDO> vehicles = vehicleService.getAllRegisteredVehicles();
+
+        if(vehicles.isEmpty()) return;
+
+        Optional<File> report = documentService.generateDailyVehiclesReport(vehicles);
+
+        report.ifPresent(file -> requestService.postFile("https://eskiel.free.beeceptor.com/test", file));
+    }
 }

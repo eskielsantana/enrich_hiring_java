@@ -1,13 +1,9 @@
 import com.infrastructure.Insurance.InsuranceDO;
 import com.infrastructure.Vehicle.VehicleDO;
 import com.domain.Document.DocumentService;
-import com.domain.Document.DocumentServiceImpl;
 import com.domain.Report.ReportService;
-import com.domain.Report.ReportServiceImpl;
 import com.domain.Request.RequestService;
-import com.domain.Request.RequestServiceImpl;
 import com.domain.Vehicle.VehicleService;
-import com.domain.Vehicle.VehicleServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,16 +33,16 @@ import static org.mockito.Mockito.when;
 public class ReportServiceTest {
 
     @InjectMocks
-    ReportService reportService = new ReportServiceImpl();
+    ReportService reportService = new ReportService();
 
     @Mock
-    VehicleService vehicleService = new VehicleServiceImpl();
+    VehicleService vehicleService = new VehicleService();
 
     @Mock
-    DocumentService documentService = new DocumentServiceImpl();
+    DocumentService documentService = new DocumentService();
 
     @Mock
-    RequestService requestService = new RequestServiceImpl();
+    RequestService requestService = new RequestService();
 
     @Before
     public void setup() {
