@@ -1,9 +1,9 @@
-package com.services.Report;
+package com.domain.Report;
 
-import com.manager.Vehicle.VehicleDO;
-import com.services.Document.DocumentService;
-import com.services.Request.RequestService;
-import com.services.Vehicle.VehicleService;
+import com.infrastructure.Vehicle.VehicleDO;
+import com.domain.Document.DocumentService;
+import com.domain.Request.RequestService;
+import com.domain.Vehicle.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

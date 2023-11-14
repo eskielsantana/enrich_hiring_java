@@ -1,4 +1,4 @@
-package com.services.Report;
+package com.domain.Report;
 
 public interface ReportService {
 

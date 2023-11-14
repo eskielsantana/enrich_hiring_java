@@ -1,6 +1,6 @@
-package com.services.Document;
+package com.domain.Document;
 
-import com.manager.Vehicle.VehicleDO;
+import com.infrastructure.Vehicle.VehicleDO;
 
 import java.io.File;
 import java.util.List;

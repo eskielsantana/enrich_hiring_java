@@ -1,5 +1,6 @@
-package com.manager.Vehicle;
+package com.infrastructure.Vehicle;
 
+import com.domain.Vehicle.VehicleManager;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package com.manager.Insurance;
+package com.infrastructure.Insurance;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

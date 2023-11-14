@@ -1,4 +1,4 @@
-package com.services.Request;
+package com.domain.Request;
 
 import java.io.File;
 

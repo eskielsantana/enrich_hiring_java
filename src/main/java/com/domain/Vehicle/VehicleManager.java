@@ -1,4 +1,6 @@
-package com.manager.Vehicle;
+package com.domain.Vehicle;
+
+import com.infrastructure.Vehicle.Vehicle;
 
 import java.util.List;
 

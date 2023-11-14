@@ -1,6 +1,6 @@
-package com.services.Vehicle;
+package com.domain.Vehicle;
 
-import com.manager.Vehicle.VehicleDO;
+import com.infrastructure.Vehicle.VehicleDO;
 
 import java.util.List;
 

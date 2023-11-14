@@ -1,4 +1,4 @@
-package com.services.Request;
+package com.domain.Request;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;

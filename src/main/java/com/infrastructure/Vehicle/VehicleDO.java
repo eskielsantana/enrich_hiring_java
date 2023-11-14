@@ -1,7 +1,7 @@
-package com.manager.Vehicle;
+package com.infrastructure.Vehicle;
 
+import com.infrastructure.Insurance.InsuranceDO;
 import com.google.auto.value.AutoValue;
-import com.manager.Insurance.InsuranceDO;
 
 import java.util.ArrayList;
 import java.util.Arrays;

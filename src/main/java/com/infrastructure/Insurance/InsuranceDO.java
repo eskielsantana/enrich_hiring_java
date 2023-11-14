@@ -1,4 +1,4 @@
-package com.manager.Insurance;
+package com.infrastructure.Insurance;
 
 import com.google.auto.value.AutoValue;
 

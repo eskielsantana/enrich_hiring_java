@@ -1,6 +1,6 @@
-package com.services.Scheduled;
+package com.domain.Scheduled;
 
-import com.services.Report.ReportService;
+import com.domain.Report.ReportService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;

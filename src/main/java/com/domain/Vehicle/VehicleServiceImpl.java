@@ -1,7 +1,6 @@
-package com.services.Vehicle;
+package com.domain.Vehicle;
 
-import com.manager.Vehicle.VehicleDO;
-import com.manager.Vehicle.VehicleManager;
+import com.infrastructure.Vehicle.VehicleDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

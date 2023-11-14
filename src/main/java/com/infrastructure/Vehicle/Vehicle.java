@@ -1,6 +1,6 @@
-package com.manager.Vehicle;
+package com.infrastructure.Vehicle;
 
-import com.manager.Insurance.Insurance;
+import com.infrastructure.Insurance.Insurance;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
