@@ -1,13 +1,12 @@
-package com.domain.vehicle;
+package domain.vehicle;
 
 import com.google.auto.value.AutoValue;
-import com.infrastructure.insurance.Insurance;
+import domain.helper.DateHelper;
+import infrastructure.insurance.Insurance;
 
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
-
-import static com.util.DateUtil.convertInstantToFormattedDate;
 
 @AutoValue
 public abstract class VehicleInsurance {
@@ -36,7 +35,8 @@ public abstract class VehicleInsurance {
     public abstract Instant endDate();
 
     public List<String> retrieveValues() {
-        return Arrays.asList(policyNumber(), convertInstantToFormattedDate(startDate()), convertInstantToFormattedDate(endDate()));
+        return Arrays.asList(policyNumber(), DateHelper.convertInstantToFormattedDate(startDate()),
+                             DateHelper.convertInstantToFormattedDate(endDate()));
     }
 
     @AutoValue.Builder

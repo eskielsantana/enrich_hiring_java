@@ -16,19 +16,19 @@ CREATE TABLE vehicle (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 INSERT INTO vehicle (vehicle_registration, make, model, year, description) VALUES
-                (UUID(), 'Honda', 'Accord Coupe', '2008', 'Low Agressive'),
-                (UUID(), 'Ferrari', 'California Convertible', '2014', 'Dream...'),
-                (UUID(), 'Jeep', 'Cherokee Latitude Plus SUV', '2019', 'Great for adventures'),
-                (UUID(), 'Tesla', 'Model S 85 Electric Sedan', '2014', 'Where can I charge it?'),
-                (UUID(), 'Porshe', 'Panamera 4 E-Hybrid Hatchback', '2018', 'Just the best car ever'),
-                (UUID(), 'Hyuudai', 'Elantra ECO Sedan', '2018', 'I am a good car to rent'),
-                (UUID(), 'Audi', 'Acura ILX Premium Sedan', '2019', null);
+                ('7ba7aab9-aa53-11ee-a8f0-1c1b0da707b6', 'Honda', 'Accord Coupe', '2008', 'Low Agressive'),
+                ('7ba7bbb4-aa53-11ee-a8f0-1c1b0da707b6', 'Ferrari', 'California Convertible', '2014', 'Dream...'),
+                ('7ba7bc1e-aa53-11ee-a8f0-1c1b0da707b6', 'Jeep', 'Cherokee Latitude Plus SUV', '2019', 'Great for adventures'),
+                ('7ba7bc41-aa53-11ee-a8f0-1c1b0da707b6', 'Tesla', 'Model S 85 Electric Sedan', '2014', 'Where can I charge it?'),
+                ('7ba7bc5d-aa53-11ee-a8f0-1c1b0da707b6', 'Porshe', 'Panamera 4 E-Hybrid Hatchback', '2018', 'Just the best car ever'),
+                ('7ba7bc7b-aa53-11ee-a8f0-1c1b0da707b6', 'Hyuudai', 'Elantra ECO Sedan', '2018', 'I am a good car to rent'),
+                ('7ba7bc95-aa53-11ee-a8f0-1c1b0da707b6', 'Audi', 'Acura ILX Premium Sedan', '2019', null);
 
 INSERT INTO vehicle_insurance (policy_number, vehicle_registration, start_date, end_date) VALUES
-                (UUID(), '10fe6431-062d-11ec-bad4-060ada5de82c', 1630134417687, 1631053737687),
-                (UUID(), '10ff6650-062d-11ec-bad4-060ada5de82c', 1630917643778, 1632248387778),
-                (UUID(), '10ff67f9-062d-11ec-bad4-060ada5de82c', 1630184748778, 1631542916778),
-                (UUID(), '10ff6860-062d-11ec-bad4-060ada5de82c', 1630497136779, 1631692424779),
-                (UUID(), '10ff68aa-062d-11ec-bad4-060ada5de82c', 1630113499779, 1631854133779),
-                (UUID(), '10ff68f4-062d-11ec-bad4-060ada5de82c', 1630707366779, 1631837426779),
-                (UUID(), '10ff693b-062d-11ec-bad4-060ada5de82c', 1630498703779, 1632172271779);
+                ('7ba7aab9-aa53-11ee-a8f0-1c1b0da707b6', '6ee12039-f2f6-4cd8-bccd-5bd922e78888', 1733077397050, 1734484174629),
+                ('7ba7bbb4-aa53-11ee-a8f0-1c1b0da707b6', '7a459e44-3433-429b-91cd-c5d158b5c0a7', 1733036456355, 1733232421090),
+                ('7ba7bc1e-aa53-11ee-a8f0-1c1b0da707b6', 'c31de0b9-1507-451a-a2c9-cdafce1c996a', 1733970211931, 1736164095825),
+                ('7ba7bc41-aa53-11ee-a8f0-1c1b0da707b6', '9b7cdada-afc8-4478-9d27-63eb85966921', 1734754220455, 1736664319844),
+                ('7ba7bc5d-aa53-11ee-a8f0-1c1b0da707b6', '056bf6d5-4234-4be1-a288-e157ffa776e9', 1733577690126, 1733913487499),
+                ('7ba7bc7b-aa53-11ee-a8f0-1c1b0da707b6', '193cf1b3-bc35-4adf-acfe-41ef4020fa54', 1734909423645, 1736473672988),
+                ('7ba7bc95-aa53-11ee-a8f0-1c1b0da707b6', 'f841667d-469a-4302-bf8d-a8359582eff1', 1733980025107, 1734595130567);

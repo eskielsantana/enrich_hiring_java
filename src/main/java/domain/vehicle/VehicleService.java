@@ -1,16 +1,17 @@
-package com.domain.vehicle;
+package domain.vehicle;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VehicleService {
     @Autowired
-    public VehicleManager vehicleManager;
+    public VehicleRepository vehicleRepository;
 
     public List<Vehicle> getRegisteredVehicles() {
-        return vehicleManager.retrieveAllVehicles().stream().map(Vehicle::fromEntity).toList();
+        return vehicleRepository.retrieveAllVehicles().stream().map(Vehicle::fromEntity).collect(Collectors.toList());
     }
 }

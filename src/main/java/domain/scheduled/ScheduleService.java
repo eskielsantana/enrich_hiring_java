@@ -1,15 +1,15 @@
-package com.domain.scheduled;
+package domain.scheduled;
 
-import com.domain.report.ReportService;
+import domain.report.ReportService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.Instant;
 
-@Component
+@Service
 public class ScheduleService {
     private static final Logger LOGGER = Logger.getLogger(ScheduleService.class);
 

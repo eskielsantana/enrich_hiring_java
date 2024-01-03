@@ -1,4 +1,4 @@
-package com.domain.vehicle;
+package domain.vehicle;
 
 import com.google.auto.value.AutoValue;
 
@@ -13,7 +13,7 @@ public abstract class Vehicle {
         return new AutoValue_Vehicle.Builder();
     }
 
-    public static Vehicle fromEntity(com.infrastructure.vehicle.Vehicle vehicle) {
+    public static Vehicle fromEntity(infrastructure.vehicle.Vehicle vehicle) {
         return Vehicle.create(vehicle.getVehicleRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(),
                               vehicle.getDescription(), VehicleInsurance.fromEntity(vehicle.getInsurance()));
     }
